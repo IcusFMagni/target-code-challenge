@@ -1,5 +1,5 @@
 # Set-up
-git clone
-npm install
-follow instructions in database.js to create a Mongoose Database.
-npm start
+1. git clone
+2. npm install
+3. follow instructions in database.js to create a Mongoose Database.
+4. npm start
