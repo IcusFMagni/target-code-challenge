@@ -5,6 +5,7 @@ app.controller('ProductsController', ['ItemService','$routeParams', function (It
 
 
     self.updateItem = ItemService.updateItem;
+    
     self.updateItemPrice = function () {
         console.log('in updateItemPrice')
         self.updateItem($routeParams._id, self.newPrice)

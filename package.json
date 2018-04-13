@@ -1,7 +1,7 @@
 {
-  "name": "angular-route-params-mongoose-movie",
+  "name": "target-code",
   "version": "1.0.0",
-  "description": "Use GitHub to work as a team on this project. Split up the tasks and use Pull Requests to merge your code. Spend some time (probably 15+ minutes) planning before diving into the code.",
+  "description": "code challenge for target",
   "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IcusFMagni/angular-route-params-mongoose-movie.git"
+    "url": "git+https://github.com/IcusFMagni/target-code-challenge"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/IcusFMagni/angular-route-params-mongoose-movie/issues"
+    "url": "https://github.com/IcusFMagni/target-code-challenge/issues"
   },
-  "homepage": "https://github.com/IcusFMagni/angular-route-params-mongoose-movie#readme",
+  "homepage": "https://github.com/IcusFMagni/target-code-challenge#readme",
   "dependencies": {
     "angular": "^1.6.7",
     "angular-route": "^1.6.7",

@@ -5,16 +5,18 @@ app.service('ItemService', ['$http', function ($http) {
     self.updatedItem = {id: '', price: ''};
 
 
-
+//Updates and Item's price
     self.updateItem = function (id, price) {
         $http({
             method: 'PUT',
             url: '/products/'+id + '/' + price,
         }).then(function (response) {
             console.log('response', response);
+            self.getItem(id);
         });
     }
 
+//Gets an Item
     self.getItem = function (id) {
 
         $http({
