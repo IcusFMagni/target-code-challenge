@@ -29,8 +29,6 @@ router.get('/:id', function (req, res) {
 
 
 router.put('/:id/:price', function (req, res) {
-    console.log('in put')
-    console.log(req.params)
     Item.findOneAndUpdate({id: req.params.id},{cost: req.params.price}, function (error, data) {
         if (error) {
             res.sendStatus(500)

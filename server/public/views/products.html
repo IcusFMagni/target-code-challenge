@@ -1,6 +1,8 @@
 <h1>Item Details</h1>
 
-<h2>{{vm.item.details}} </h2>
+<h2>{{vm.item.details.name}} </h2>
+<p>id: {{vm.item.details.id}}</p>
+<p>cost: {{vm.item.details.cost}} in {{vm.item.details.currency}}</p>
 
 <input ng-model="vm.newPrice" >
 <button ng-click="vm.updateItemPrice();">Update Price</button>
