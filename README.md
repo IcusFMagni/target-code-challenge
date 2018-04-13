@@ -4,7 +4,7 @@
 3. follow instructions in database.js to create a Mongoose Database.
 4. npm start
 5. Using ItemApp
-    * use POSTMAN to make get or put requests to localhost:5000/product/{:id}
+    * use POSTMAN to make get requests to localhost:5000/products/id and put to localhost:5000/products/id/newPrice
     * go to localhost:5000 and search for an item then update it's price.
 
 ## About my mock data.

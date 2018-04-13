@@ -6,21 +6,20 @@ app.service('ItemService', ['$http', function ($http) {
 
 
 
-    self.updateItem = function (searchTerm) {
+    self.updateItem = function (id, price) {
         $http({
             method: 'PUT',
-            url: '/products/'+id,
-            params: {id:updatedItem.id, price: newItem.price}
+            url: '/products/'+id + '/' + price,
         }).then(function (response) {
             console.log('response', response);
-            self.searchTerm.string = "";
         });
     }
 
     self.getItem = function (id) {
+
         $http({
             method: 'GET',
-            url: '/products/'+id
+            url: '/products/'+id,
         }).then (function (response){
             console.log('response', response)
             self.item.details = response.data

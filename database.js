@@ -5,13 +5,13 @@ mongo
 use products_database
 
 /* Create new Collection products */
-db.createCollection('products');
+db.createCollection('items');
 
 /* show collections */
 show collections;
 
 /* add items to collection  */
-db.products.insertMany([
+db.items.insertMany([
     {
         id: 13860428,
         cost: 19.99,

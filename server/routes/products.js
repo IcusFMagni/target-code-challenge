@@ -8,48 +8,36 @@ router.get('/:id', function (req, res) {
         uri: "https://redsky.target.com/v2/pdp/tcin/" + req.params.id
     }, function (err, response, body) {
         if (!err && response.statusCode == 200) {
-            const item = {
-                title: JSON.parse(body).product.item.product_description.title,
-                current_price: {}
-            }
-
-            Item.find({ id: req.params.id }, function (error, data) {
+            let item = {
+                title: JSON.parse(body).product.item.product_description.title}
+            Item.findOne({ id: req.params.id }, function (error, data) {
                 if (error) {
                     res.sendStatus(500)
                 } else {
-                    item.current_price = data;
+                    item.cost = data.cost
+                    item.currency = data.currency
+                    res.send(JSON.stringify({ id: req.params.id, name: item.title, cost: item.cost, currency: item.currency }))
                 }
             })
-            res.send(JSON.stringify({ id:req.params.id, name: item.title, current_price:{}}))
         } else {
             res.send(err)
         }
     })
-    // Item.find({ _id: req.params.id }, function (errorMakingDatabaseQuery, data) {
-    //     if (errorMakingDatabaseQuery) {
-    //         console.log('error with details get', errorMakingDatabaseQuery);
-    //         res.sendStatus(500)
-    //     } else {
-    //         console.log(data)
-    //         res.send(data);
-    //     }
-    // })
 })
 
-// router.post('/', function (req, res) {
-//     console.log('/movie post')
-//     var movieToAdd = new Movie(req.body);
 
 
-//     movieToAdd.save(function (errorMakingDatabaseQuery, data) {
-//         if (errorMakingDatabaseQuery) {
-//             console.log('error', errorMakingDatabaseQuery);
-//             res.sendStatus(500);
-//         } else {
-//             res.sendStatus(201);
-//         }
 
-//     });
-// });
+router.put('/:id/:price', function (req, res) {
+    console.log('in put')
+    console.log(req.params)
+    Item.findOneAndUpdate({id: req.params.id},{cost: req.params.price}, function (error, data) {
+        if (error) {
+            res.sendStatus(500)
+        }else {
+            res.sendStatus(200)
+        }
+    })
+})
 
 module.exports = router;
