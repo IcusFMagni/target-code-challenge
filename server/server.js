@@ -14,6 +14,7 @@ mongooseConnection.connect();
 
 app.use('/products', products);
 
+
 app.listen(port, function(){
     console.log('listening on port', port);  
 });
